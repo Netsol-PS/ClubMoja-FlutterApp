@@ -1,11 +1,7 @@
-
-
 import 'package:demo/core/res/routes/routes_name.dart';
 import 'package:demo/presentation/screens/login_screen.dart';
 import 'package:get/get.dart';
-
 import '../../../presentation/screens/splash_screen.dart';
-
 
 class AppRoutes {
 

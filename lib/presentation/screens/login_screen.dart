@@ -1,8 +1,5 @@
-import 'package:demo/core/utils/utils.dart';
 import 'package:demo/presentation/view_models/login_view_model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutterx_live_data/flutterx_live_data.dart';
-
 import '../../core/di/injector.dart';
 import '../../repository/interfaces/auth_repo.dart';
 
@@ -104,18 +101,5 @@ class LoginScreenState extends State<LoginScreen> {
         ),
       ),
     );
-  }
-
-  void getCountries() {
-    authRepo.getCountries().then((value) {
-      if (value.isSuccessful && value.data != null) {
-        Utils.snackBar("response", value.data![0].countryCode.toString());
-      } else {
-        print("error: ${value.error!.errorCode.code}");
-        print("error_message: ${value.error!.message}");
-
-        Utils.snackBar("error", value.error!.message);
-      }
-    }).onError((error, stackTrace) {});
   }
 }

@@ -1,9 +1,9 @@
 import 'package:demo/data/models/responses/country_data.dart';
 import 'package:demo/repository/interfaces/auth_repo.dart';
-import 'package:flutterx_live_data/flutterx_live_data.dart';
-
+import 'package:get/get.dart';
 import '../../core/di/injector.dart';
-import '../../core/utils/utils.dart';
+import '../../core/utils/popups/loaders.dart';
+import '../../navigation_menu.dart';
 import 'base_view_model.dart';
 
 class LoginViewModel extends BaseViewModel {
@@ -22,10 +22,13 @@ class LoginViewModel extends BaseViewModel {
       (response) {
         if (response.isSuccessful && response.data != null) {
           // Update live data on success
+          AppLoaders.successSnackBar(title: "response", message: response.data!.toString());
+          Get.off(() => const NavigationMenu());
          // _getCountriesLiveData.postValue(response.data!);
          //  notifyListeners();
         } else {
-          Utils.snackBar("Error", response.error?.message ?? 'Unknown error');
+          AppLoaders.successSnackBar(title: "Error", message: response.error?.message ?? 'Unknown error');
+          // Utils.snackBar("Error", response.error?.message ?? 'Unknown error');
         }
       },
     );

@@ -28,13 +28,26 @@ dependencies:
   # For calling RestAPIs
   dio: ^5.7.0
   # For Network Connection
-  connectivity_plus: ^4.0.0
+  connectivity_plus: ^6.1.0
   # For dependency_injection
   get_it: ^7.2.0
   injectable: ^2.0.0
 
   # For Playing Lottie Animation
   lottie: ^3.1.2
+
+  # For date and time format
+  intl: ^0.19.0
+
+  # For using icons
+  iconsax: ^0.0.8
+
+  # For using SVG image
+  flutter_svg: ^2.0.14
+
+  # For smooth page changer
+  smooth_page_indicator: ^1.2.0+3
+
   # For JSON serializable
   json_annotation: ^4.8.0
   flutterx_live_data: ^1.9.8
@@ -66,3 +79,7 @@ flutter:
     - assets/
     - assets/images/
     - assets/lottie/
+    - assets/images/tabbar/
+    - assets/images/home_screen/
+    - assets/images/history_screen/
+    - assets/images/account_scrren/
