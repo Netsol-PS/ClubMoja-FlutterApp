@@ -4,6 +4,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'core/di/injector.dart';
 import 'core/res/routes/routes.dart';
+import 'core/res/theme/theme.dart';
 
 //global object for accessing device screen size
 late Size mq;
@@ -30,20 +31,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-        title: 'Club Moja',
+        themeMode: ThemeMode.system,
+        theme: AppTheme.lightTheme,
+        darkTheme: AppTheme.darkTheme,
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-            useMaterial3: false,
-            appBarTheme: const AppBarTheme(
-              centerTitle: true,
-              elevation: 1,
-              iconTheme: IconThemeData(color: Colors.black),
-              titleTextStyle: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.normal,
-                  fontSize: 19),
-              backgroundColor: Colors.purpleAccent,
-            )),
         getPages: AppRoutes.appRoutes());
   }
 }
