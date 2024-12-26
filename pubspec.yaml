@@ -1,0 +1,68 @@
+name: demo
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: ">=3.3.2 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  # For using GetX
+  get: ^4.6.1
+
+  # For using cupertino icons
+  cupertino_icons: ^1.0.8
+
+  # For showing network images
+  cached_network_image: ^3.3.1
+
+  # For picking images
+  image_picker: ^1.1.2
+
+  # For showing Emojis
+  emoji_picker_flutter: ^2.2.0
+
+  # For calling RestAPIs
+  dio: ^5.7.0
+  # For Network Connection
+  connectivity_plus: ^4.0.0
+  # For dependency_injection
+  get_it: ^7.2.0
+  injectable: ^2.0.0
+
+  # For Playing Lottie Animation
+  lottie: ^3.1.2
+  # For JSON serializable
+  json_annotation: ^4.8.0
+  flutterx_live_data: ^1.9.8
+dev_dependencies:
+  build_runner: ^2.3.3
+  injectable_generator: ^2.0.0
+  json_serializable: ^6.5.0
+  flutter_test:
+    sdk: flutter
+
+  #   flutter_launcher_icons: "^0.10.0"
+
+  # flutter_icons:
+  #   android: "ic_launcher"
+  #   ios: true
+  #   image_path: "assets/images/icon.png"
+  #   min_sdk_android: 21
+  #   remove_alpha_ios: true
+
+  # For recommended coding practices
+  flutter_lints: ^4.0.0
+
+flutter:
+  # For enabling material design
+  uses-material-design: true
+
+  # App Assets
+  assets:
+    - assets/
+    - assets/images/
+    - assets/lottie/
