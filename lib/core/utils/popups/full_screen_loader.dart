@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../../common/widgets/loaders/animation_loader.dart';
+import 'package:flutter/cupertino.dart';
 
 class AppFullScreenLoader {
-  /// Open a full-screen dialog with a given text & animation.
+  /// Open a full-screen dialog with a loader and transparent background.
   /// This method doesn't return anything.
-  ///
-  /// Parameters:
-  ///   - text: the text to be displayed in the loading dialog
-  ///   - animation: the lottie animation to be shown
-  static void openLoadingDialog(String text, String animation) {
+  static void openLoadingDialog() {
     showDialog(
       context: Get.overlayContext!, // Use Get.overlayContext for overlay delays
       barrierDismissible: false, // The dialog can't be dismissed by tapping outside it
       builder: (_) => PopScope(
         canPop: false, // Disable popping with the back button
         child: Container(
+          color: Colors.transparent, // Transparent background
           width: double.infinity,
           height: double.infinity,
-          child: Column(
-            children: [
-              const SizedBox(height: 50), // Adjust the spacing as needed
-              AppAnimationLoaderWidget(text: text, animation: animation),
-            ],
+          child: const Center(
+            child: CupertinoActivityIndicator(radius: 20.0), // iOS loader
           ),
         ),
       ),
@@ -31,8 +25,7 @@ class AppFullScreenLoader {
 
   /// Stop the currently open loading dialog.
   /// This method doesn't return anything.
-  static stopLoading() {
-      Navigator.of(Get.overlayContext!).pop(); // Close the dialog using the Navigator
+  static void stopLoading() {
+    Navigator.of(Get.overlayContext!).pop(); // Close the dialog using the Navigator
   }
 }
-
