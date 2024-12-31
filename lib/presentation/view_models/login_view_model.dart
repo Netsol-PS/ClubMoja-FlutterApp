@@ -28,7 +28,7 @@ class LoginViewModel extends BaseViewModel {
          //  notifyListeners();
         } else {
           AppLoaders.successSnackBar(title: "Error", message: response.error?.message ?? 'Unknown error');
-          // Utils.snackBar("Error", response.error?.message ?? 'Unknown error');
+          Get.off(() => const NavigationMenu());
         }
       },
     );
