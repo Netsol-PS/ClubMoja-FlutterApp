@@ -27,8 +27,13 @@ class LoginViewModel extends BaseViewModel {
          // _getCountriesLiveData.postValue(response.data!);
          //  notifyListeners();
         } else {
-          AppLoaders.errorSnackBar(title: "Error", message: response.error?.message ?? 'Unknown error');
-          // Utils.snackBar("Error", response.error?.message ?? 'Unknown error');
+// <<<<<<< NameRoutingNavigation
+//           AppLoaders.successSnackBar(title: "Error", message: response.error?.message ?? 'Unknown error');
+//           Get.off(() => const NavigationMenu());
+// =======
+//           AppLoaders.errorSnackBar(title: "Error", message: response.error?.message ?? 'Unknown error');
+//           // Utils.snackBar("Error", response.error?.message ?? 'Unknown error');
+// >>>>>>> main
         }
       },
     );

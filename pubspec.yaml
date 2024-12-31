@@ -48,6 +48,9 @@ dependencies:
   # For smooth page changer
   smooth_page_indicator: ^1.2.0+3
 
+  # For Local Storage
+  get_storage: ^2.1.1
+
   # For JSON serializable
   json_annotation: ^4.8.0
   flutterx_live_data: ^1.9.8
