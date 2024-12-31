@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
-
+import 'package:get/get.dart';
 import '../../data/models/responses/api_response.dart';
+import '../../core/utils/popups/full_screen_loader.dart';
 
 enum RequestState { Start, Loading, Success, Error }
 
@@ -18,6 +19,7 @@ class BaseViewModel extends ChangeNotifier {
     if (!_isInProcess) {
       _isInProcess = true;
       _requestState = RequestState.Loading;
+      AppFullScreenLoader.openLoadingDialog(); // Initiate loading
       notifyListeners();
     }
   }
@@ -25,6 +27,7 @@ class BaseViewModel extends ChangeNotifier {
   void requestFinished() {
     _isInProcess = false;
     _requestState = RequestState.Success;
+    AppFullScreenLoader.stopLoading(); // Stop loading
     notifyListeners();
   }
 
@@ -32,6 +35,7 @@ class BaseViewModel extends ChangeNotifier {
     _isInProcess = false;
     _requestState = RequestState.Error;
     _errorMessage = error;
+    AppFullScreenLoader.stopLoading(); // Stop loading
     notifyListeners();
   }
 
